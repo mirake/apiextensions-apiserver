@@ -272,7 +272,7 @@ func (r *ScaleREST) Update(ctx context.Context, name string, objInfo rest.Update
 	return newScale, false, err
 }
 
-// scaleFromCustomResource returns a scale subresource for a customresource and a bool signalling wether
+// scaleFromCustomResource returns a scale subresource for a customresource and a bool signalling whether
 // the specReplicas value was found.
 func scaleFromCustomResource(cr *unstructured.Unstructured, specReplicasPath, statusReplicasPath, labelSelectorPath string) (*autoscalingv1.Scale, bool, error) {
 	specReplicasPath = strings.TrimPrefix(specReplicasPath, ".") // ignore leading period
